@@ -21,7 +21,7 @@ def read_file(file):
 
 
 def nearest_neighbor(subset):
-    """This function returns how many instances were guessed correctly."""
+    """This function finds the nearest neighbor and returns how many instances were guessed correctly."""
 
     subset_list = list(subset)
     total_correct = 0
@@ -51,6 +51,7 @@ def forward():
     best_accuracy = 0.0
     best_subset = set()  # saves best set
     for i in range(1, len(arr_data[0])):
+        # print('Level: '+ str(i))
         accuracy = 0.0
         best_set = set()  # saves current best temp set
         for j in range(1, len(arr_data[0])):
@@ -88,6 +89,7 @@ def backward():
     print('\tUsing feature(s) ' + str(best_subset) + ' accuracy is ' + str(best_accuracy * 100) + '%')
     print('\nFeature set ' + str(best_subset) + ' was best, accuracy is ' + str(best_accuracy * 100) + '%\n')
     for i in range(1, len(arr_data[0])):
+        # print('Level: '+str(i))
         accuracy = 0.0
         best_set = set()  # saves current best temp set
         for j in range(1, len(arr_data[0])):

@@ -30,12 +30,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4269" />
+          <entry key="py" value="4375" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="4269" />
+          <entry key="Python" value="4375" />
         </counts>
       </usages-collector>
     </session>
@@ -45,11 +45,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+            <state relative-caret-position="165">
+              <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding>
-                <marker date="1544673329024" expanded="true" signature="497:1245" ph="..." />
-                <marker date="1544673329024" expanded="true" signature="1259:4348" ph="..." />
+                <marker date="1544682018075" expanded="true" signature="497:1276" ph="..." />
+                <marker date="1544682018075" expanded="true" signature="1290:4448" ph="..." />
               </folding>
             </state>
           </provider>
@@ -73,10 +73,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1348" />
-    <option name="y" value="-383" />
-    <option name="width" value="973" />
-    <option name="height" value="1011" />
+    <option name="x" value="305" />
+    <option name="y" value="23" />
+    <option name="width" value="925" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -126,11 +126,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1348" y="-383" width="973" height="1011" extended-state="0" />
+    <frame x="305" y="23" width="925" height="729" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1039916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.109513275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
@@ -164,11 +164,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+        <state relative-caret-position="165">
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
           <folding>
-            <marker date="1544673329024" expanded="true" signature="497:1245" ph="..." />
-            <marker date="1544673329024" expanded="true" signature="1259:4348" ph="..." />
+            <marker date="1544682018075" expanded="true" signature="497:1276" ph="..." />
+            <marker date="1544682018075" expanded="true" signature="1290:4448" ph="..." />
           </folding>
         </state>
       </provider>
