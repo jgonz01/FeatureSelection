@@ -26,22 +26,18 @@ def nearest_neighbor(subset):
     subset_list = list(subset)
     total_correct = 0
     for i in range(len(arr_data)):
-        #print('i: ' + str(i))
         shortest_distance = 9999999999999999999999.0
         shortest_index = -1
         for j in range(len(arr_data)):
             if j == i:
                 continue
-            #print('j: ' + str(j))
             dist = 0
             for feature in subset_list:
                 dist += pow(arr_data[i][feature] - arr_data[j][feature], 2)
-                #print('feature: ' + str(feature) + ' dist: '+ str(dist))
             dist = sqrt(dist)
             if dist < shortest_distance:
                 shortest_distance = dist
                 shortest_index = j
-        #print(str(arr_data[i][0]) + ' and ' + str(arr_data[shortest_index][0]))
         if arr_data[i][0] == arr_data[shortest_index][0]:
             total_correct += 1
 
@@ -51,17 +47,51 @@ def nearest_neighbor(subset):
 def forward():
     """This function handles forward selection."""
 
-    subset = set()
+    subset = set()  # saves parent set
     best_accuracy = 0.0
-    best_subset = set()
+    best_subset = set()  # saves best set
     for i in range(1, len(arr_data[0])):
-        #print('i: ' + str(i))
         accuracy = 0.0
-        best_set = set()
+        best_set = set()  # saves current best temp set
         for j in range(1, len(arr_data[0])):
-            #print('j: ' + str(j))
-            temp_set = subset.copy()
+            temp_set = subset.copy()  # saves set to test
             temp_set.add(j)
+            if subset == temp_set:
+                continue
+            calc_accuracy = nearest_neighbor(temp_set)
+            print('\tUsing feature(s) ' + str(temp_set) + ' accuracy is ' + str(calc_accuracy*100) + '%')
+            if calc_accuracy > accuracy:
+                accuracy = calc_accuracy
+                best_set = temp_set.copy()
+        subset = best_set.copy()
+        if accuracy > best_accuracy:
+            print('\nFeature set ' + str(subset) + ' was best, accuracy is ' + str(accuracy * 100) + '%\n')
+            best_accuracy = accuracy
+            best_subset = subset.copy()
+        else:
+            print('\n(Warning, Accuracy has decreased! Continuing search in case of local maxima)\n'
+                  'Feature set ' + str(subset) + ' was best, accuracy is ' + str(accuracy*100) + '%\n')
+
+    print('Finished search!! The best feature subset is ' + str(best_subset) + ', which has an accuracy of '
+          + str(best_accuracy*100) + '%')
+
+
+def backward():
+    """This function handles backward selection."""
+
+    subset = set()  # saves parent set
+    for i in range(num_features):
+        subset.add(i+1)
+
+    best_accuracy = nearest_neighbor(subset)  # saves best accuracy
+    best_subset = subset.copy()  # saves best set
+    print('\tUsing feature(s) ' + str(best_subset) + ' accuracy is ' + str(best_accuracy * 100) + '%')
+    print('\nFeature set ' + str(best_subset) + ' was best, accuracy is ' + str(best_accuracy * 100) + '%\n')
+    for i in range(1, len(arr_data[0])):
+        accuracy = 0.0
+        best_set = set()  # saves current best temp set
+        for j in range(1, len(arr_data[0])):
+            temp_set = subset.copy() - set([j])  # saves set to test
             if subset == temp_set:
                 continue
             calc_accuracy = nearest_neighbor(temp_set)
@@ -97,12 +127,11 @@ if __name__ == "__main__":
 
     print('\nThis dataset has ' + str(num_features) + ' features (not including the class attribute)'
                                                     ' with ' + str(num_instances) + ' instances.\n')
-
+    print('Beginning search.\n')
     if algorithm == '1':
-        print('Beginning search.\n')
         forward()
-    # elif algorithm == '2':
-    #     #print("2")
+    elif algorithm == '2':
+        backward()
     # elif algorithm == '3':
     #     #print("3")
 
