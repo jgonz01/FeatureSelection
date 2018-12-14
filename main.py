@@ -20,8 +20,8 @@ def read_file(file):
             arr_data.append(arr_tmp)
 
 
-def nearest_neighbor(subset):
-    """This function finds the nearest neighbor and returns how many instances were guessed correctly."""
+def nearest_neighbor_loocv(subset):
+    """This function finds the nearest neighbor and returns leave one out cross validation error."""
 
     subset_list = list(subset)
     total_correct = 0
@@ -59,7 +59,7 @@ def forward():
             temp_set.add(j)
             if subset == temp_set:
                 continue
-            calc_accuracy = nearest_neighbor(temp_set)
+            calc_accuracy = nearest_neighbor_loocv(temp_set)
             print('\tUsing feature(s) ' + str(temp_set) + ' accuracy is ' + str(calc_accuracy*100) + '%')
             if calc_accuracy > accuracy:
                 accuracy = calc_accuracy
@@ -84,7 +84,7 @@ def backward():
     for i in range(num_features):
         subset.add(i+1)
 
-    best_accuracy = nearest_neighbor(subset)  # saves best accuracy
+    best_accuracy = nearest_neighbor_loocv(subset)  # saves best accuracy
     best_subset = subset.copy()  # saves best set
     print('\tUsing feature(s) ' + str(best_subset) + ' accuracy is ' + str(best_accuracy * 100) + '%')
     print('\nFeature set ' + str(best_subset) + ' was best, accuracy is ' + str(best_accuracy * 100) + '%\n')
@@ -96,7 +96,7 @@ def backward():
             temp_set = subset.copy() - set([j])  # saves set to test
             if subset == temp_set:
                 continue
-            calc_accuracy = nearest_neighbor(temp_set)
+            calc_accuracy = nearest_neighbor_loocv(temp_set)
             print('\tUsing feature(s) ' + str(temp_set) + ' accuracy is ' + str(calc_accuracy*100) + '%')
             if calc_accuracy > accuracy:
                 accuracy = calc_accuracy
