@@ -159,10 +159,10 @@ if __name__ == "__main__":
 
     read_file(file_name)
 
-    # Delete {8, 2} for small set
-    for data in arr_data:
-        del data[8]
-        #del data[2]
+    # # Delete {8, 2} for small set
+    # for data in arr_data:
+    #     del data[8]
+    #     del data[2]
 
     # # Delete {1, 3} for large set
     # for data in arr_data:

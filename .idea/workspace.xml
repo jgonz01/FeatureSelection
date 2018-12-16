@@ -48,15 +48,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="164" column="9" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+            <state relative-caret-position="676">
+              <caret line="161" column="4" lean-forward="true" selection-start-line="161" selection-start-column="6" selection-end-line="164" selection-end-column="20" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1544937955401" expanded="true" signature="438:439" ph="..." />
-                <marker date="1544937955401" expanded="true" signature="474:1248" ph="..." />
-                <marker date="1544937955401" expanded="true" signature="1262:5642" ph="..." />
-                <marker date="1544937955401" expanded="true" signature="4437:4440" ph="..." />
-                <marker date="1544937955401" expanded="true" signature="4459:5642" ph="..." />
+                <marker date="1544942687319" expanded="true" signature="438:439" ph="..." />
+                <marker date="1544942687319" expanded="true" signature="474:1248" ph="..." />
+                <marker date="1544942687319" expanded="true" signature="1262:5642" ph="..." />
+                <marker date="1544942687319" expanded="true" signature="4437:4440" ph="..." />
+                <marker date="1544942687319" expanded="true" signature="4459:5642" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,8 +82,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
-    <option name="y" value="79" />
+    <option name="x" value="1422" />
+    <option name="y" value="-339" />
     <option name="width" value="925" />
     <option name="height" value="729" />
   </component>
@@ -135,7 +135,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="79" width="925" height="729" extended-state="0" />
+    <frame x="1422" y="-339" width="925" height="729" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.109513275" />
@@ -171,15 +171,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="164" column="9" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+        <state relative-caret-position="676">
+          <caret line="161" column="4" lean-forward="true" selection-start-line="161" selection-start-column="6" selection-end-line="164" selection-end-column="20" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1544937955401" expanded="true" signature="438:439" ph="..." />
-            <marker date="1544937955401" expanded="true" signature="474:1248" ph="..." />
-            <marker date="1544937955401" expanded="true" signature="1262:5642" ph="..." />
-            <marker date="1544937955401" expanded="true" signature="4437:4440" ph="..." />
-            <marker date="1544937955401" expanded="true" signature="4459:5642" ph="..." />
+            <marker date="1544942687319" expanded="true" signature="438:439" ph="..." />
+            <marker date="1544942687319" expanded="true" signature="474:1248" ph="..." />
+            <marker date="1544942687319" expanded="true" signature="1262:5642" ph="..." />
+            <marker date="1544942687319" expanded="true" signature="4437:4440" ph="..." />
+            <marker date="1544942687319" expanded="true" signature="4459:5642" ph="..." />
           </folding>
         </state>
       </provider>
