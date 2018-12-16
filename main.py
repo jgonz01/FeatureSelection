@@ -1,4 +1,5 @@
 from math import sqrt
+import random
 
 arr_data = []
 features = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -114,6 +115,40 @@ def backward():
           + str(best_accuracy*100) + '%')
 
 
+def my_algorithm():
+    """This algorithm is like forward selection except it deletes random data."""
+
+    data_delete = random.sample(range(0, 200), 150)
+    data_delete.sort()
+    # Delete data
+    for index in reversed(data_delete):
+        del arr_data[index]
+
+    subset = set()  # saves parent set
+    best_accuracy = 0.0
+    best_subset = set()  # saves best set
+    for i in range(1, len(arr_data[0])):
+        print('Level: '+ str(i))
+        accuracy = 0.0
+        best_set = set()  # saves current best temp set
+        for j in range(1, len(arr_data[0])):
+            temp_set = subset.copy()  # saves set to test
+            temp_set.add(j)
+            if subset == temp_set:
+                continue
+            calc_accuracy = nearest_neighbor_loocv(temp_set)
+            if calc_accuracy > accuracy:
+                accuracy = calc_accuracy
+                best_set = temp_set.copy()
+        subset = best_set.copy()
+        if accuracy > best_accuracy:
+            best_accuracy = accuracy
+            best_subset = subset.copy()
+
+    print('Finished search!! The best feature subset is ' + str(best_subset) + ', which has an accuracy of '
+          + str(best_accuracy * 100) + '%')
+
+
 if __name__ == "__main__":
 
     print("Welcome to Jessica Gonzalez's Feature Selection Algorithm.")
@@ -124,17 +159,29 @@ if __name__ == "__main__":
                       "3) Jessica's Special Algorithm\n")
 
     read_file(file_name)
+
+    # # Delete {8, 2} for small set
+    # for data in arr_data:
+    #     del data[8]
+    #     del data[2]
+
+    # # Delete {1, 3} for large set
+    # for data in arr_data:
+    #     del data[3]
+    #     del data[1]
+
     num_instances = len(arr_data)
     num_features = len(arr_data[0]) - 1
 
     print('\nThis dataset has ' + str(num_features) + ' features (not including the class attribute)'
                                                     ' with ' + str(num_instances) + ' instances.\n')
     print('Beginning search.\n')
+
     if algorithm == '1':
         forward()
     elif algorithm == '2':
         backward()
-    # elif algorithm == '3':
-    #     #print("3")
+    elif algorithm == '3':
+        my_algorithm()
 
 
