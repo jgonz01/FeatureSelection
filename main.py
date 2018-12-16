@@ -88,7 +88,7 @@ def backward():
     best_subset = subset.copy()  # saves best set
     print('\tUsing feature(s) ' + str(best_subset) + ' accuracy is ' + str(best_accuracy * 100) + '%')
     print('\nFeature set ' + str(best_subset) + ' was best, accuracy is ' + str(best_accuracy * 100) + '%\n')
-    for i in range(1, len(arr_data[0])):
+    for i in range(1, len(arr_data[0])-1):
         # print('Level: '+str(i))
         accuracy = 0.0
         best_set = set()  # saves current best temp set
@@ -117,7 +117,7 @@ def backward():
 def my_algorithm():
     """This algorithm is like forward selection except it deletes random data."""
 
-    data_delete = random.sample(range(0, 200), 150)
+    data_delete = random.sample(range(0, 200), 50)
     data_delete.sort()
     # Delete data
     for index in reversed(data_delete):
@@ -159,10 +159,10 @@ if __name__ == "__main__":
 
     read_file(file_name)
 
-    # # Delete {8, 2} for small set
-    # for data in arr_data:
-    #     del data[8]
-    #     del data[2]
+    # Delete {8, 2} for small set
+    for data in arr_data:
+        del data[8]
+        #del data[2]
 
     # # Delete {1, 3} for large set
     # for data in arr_data:
